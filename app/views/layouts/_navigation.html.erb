@@ -13,8 +13,12 @@
       About Us
     </a>
     <div class="right menu">
-     <%= link_to "Log-in/Sign-up", login_path, class: "item" %>
+      <% if logged_in? %>
+        <%= link_to "Logout", logout_path, method: :delete, class: "item" %>
+      <% else %>
+        <%= link_to "Log In", login_path, class: "item" %>
+        <%= link_to "Sign Up", login_path, class: "item" %>
+      <% end %>
     </div>
   </div>
 </div>
-
